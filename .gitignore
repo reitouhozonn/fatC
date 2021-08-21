@@ -13,7 +13,7 @@ public/storage
 public/hot
 public/js/**
 public/css/**
-
+storage
 storage/*.key
 .env
 Homestead.yaml
