@@ -35,7 +35,7 @@ class CreateBookmarkRequest extends FormRequest
         return [
             'url' => 'required|string|url',
             'comment' => 'required|string|min:10|max:1000',
-            'category' => 'required|integer|exists:bookmark_categorise,id'
+            'category' => 'required|integer|exists:bookmark_categories,id'
         ];
     }
 }
