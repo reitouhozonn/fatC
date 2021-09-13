@@ -1952,3 +1952,7 @@ Did you mean one of these?
 #72 /opt/laravel-bookmark/public/index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
 #73 {main}
 "} 
+[2021-09-11 16:03:53] local.ERROR: Namespace declaration statement has to be the very first statement or after any declare call in the script {"userId":31,"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalErrorException(code: 64): Namespace declaration statement has to be the very first statement or after any declare call in the script at /opt/laravel-bookmark/app/Lib/LinkPreview/LinkPreview.php:4)
+[stacktrace]
+#0 {main}
+"} 
