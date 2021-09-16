@@ -1958,3 +1958,6 @@ Did you mean one of these?
 "} 
 [2021-09-14 21:15:00] testing.ERROR:   
 [2021-09-15 16:28:30] testing.ERROR:   
+[2021-09-17 01:19:40] testing.ERROR: urlからメタ情報の習得に失敗  
+[2021-09-17 05:41:12] testing.ERROR: urlからメタ情報の習得に失敗  
+[2021-09-17 05:42:31] testing.ERROR: urlからメタ情報の習得に失敗  
