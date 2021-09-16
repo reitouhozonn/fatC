@@ -3,7 +3,6 @@
 namespace Tests\Feature\Bookmarks;
 
 use App\Bookmark\UseCase\CreateBookmarkUseCase;
-use App\Lib\LinkPreview\LinkPreview;
 use App\Lib\LinkPreview\LinkPreviewInterface;
 use App\Lib\LinkPreview\MockLinkPreview;
 use App\Models\BookmarkCategory;
@@ -19,7 +18,8 @@ class CreateBookmarkUseCaseTest extends TestCase
     {
         parent::setUp();
 
-        $this->useCase = new CreateBookmarkUseCase(new LinkPreview());
+        $this->app->bind(LinkPreviewInterface::class, MockLinkPreview::class);
+        $this->useCase = $this->app->make(CreateBookmarkUseCase::class);
     }
 
     public function testSaveCorrectData()
