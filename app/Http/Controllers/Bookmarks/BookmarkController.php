@@ -7,8 +7,7 @@ use App\Bookmark\UseCase\CreateBookmarkUseCase;
 use App\Bookmark\UseCase\ShowBookmarkListPageUseCase;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CreateBookmarkRequest;
-use App\Lib\LinkPreview\LinkPreview;
-use App\Lib\LinkPreview\MockLinkPreview;
+use App\Http\Requests\UpdateBookmarkRequest;
 use App\Models\Bookmark;
 use App\Models\BookmarkCategory;
 use App\Models\User;
@@ -17,7 +16,6 @@ use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\ValidationException;
 use Illuminate\View\View;
 
@@ -142,10 +140,10 @@ class BookmarkController extends Controller
      */
     public function showEditForm(Request $request, int $id)
     {
-        if (Auth::guest()) {
-            // @note ここの処理はユーザープロフィールでも使われている
-            return redirect('/login');
-        }
+        // if (Auth::guest()) {
+        //     // @note ここの処理はユーザープロフィールでも使われている
+        //     return redirect('/login');
+        // }
 
         SEOTools::setTitle('ブックマーク編集');
 
@@ -174,17 +172,17 @@ class BookmarkController extends Controller
      * @return Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      * @throws ValidationException
      */
-    public function update(Request $request, int $id)
+    public function update(UpdateBookmarkRequest $request, int $id)
     {
-        if (Auth::guest()) {
-            // @note ここの処理はユーザープロフィールでも使われている
-            return redirect('/login');
-        }
+        // if (Auth::guest()) {
+        //     // @note ここの処理はユーザープロフィールでも使われている
+        //     return redirect('/login');
+        // }
 
-        Validator::make($request->all(), [
-            'comment' => 'required|string|min:10|max:1000',
-            'category' => 'required|integer|exists:bookmark_categories,id',
-        ])->validate();
+        // Validator::make($request->all(), [
+        //     'comment' => 'required|string|min:10|max:1000',
+        //     'category' => 'required|integer|exists:bookmark_categories,id',
+        // ])->validate();
 
         $model = Bookmark::query()->findOrFail($id);
 
@@ -217,10 +215,10 @@ class BookmarkController extends Controller
      */
     public function delete(int $id)
     {
-        if (Auth::guest()) {
-            // @note ここの処理はユーザープロフィールでも使われている
-            return redirect('/login');
-        }
+        // if (Auth::guest()) {
+        //     // @note ここの処理はユーザープロフィールでも使われている
+        //     return redirect('/login');
+        // }
 
         $model = Bookmark::query()->findOrFail($id);
 
