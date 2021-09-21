@@ -21,9 +21,9 @@ Auth::routes();
 Route::prefix('/bookmarks')->group(function () {
     Route::get('/', 'Bookmarks\BookmarkController@list');
     Route::get('/category/{category_id}', 'Bookmarks\BookmarkController@listCategory');
-    Route::put('/{id}', 'Bookmarks\BookmarkController@update')->middleware('auth');
     Route::delete('/{id}', 'Bookmarks\BookmarkController@delete')->middleware('auth');
     Route::post('/', 'Bookmarks\BookmarkController@create')->middleware('auth');
+    Route::put('/{id}', 'Bookmarks\BookmarkController@update')->middleware('auth');
 });
 
 Route::prefix('/bookmark-create')->group(function () {

@@ -2,10 +2,12 @@
 
 namespace Tests\Feature\Bookmarks;
 
+use App\Bookmark\UseCase\UpdateBookmarkUseCase;
 use App\Http\Middleware\VerifyCsrfToken;
 use App\Models\User;
 use Illuminate\Support\Str;
 use Tests\TestCase;
+use Illuminate\Http\Request;
 
 class UpdateBookmarkTest extends TestCase
 {
@@ -14,6 +16,7 @@ class UpdateBookmarkTest extends TestCase
         parent::setUp();
         // このミドルウェアがあると419で失敗するし、今回テストしたいことではないので外す
         $this->withoutMiddleware(VerifyCsrfToken::class);
+        // $this->usecase = $this->app->make(UpdateBookmarkUseCase::class);
     }
     /**
      * ユーザー認証済み
@@ -25,8 +28,10 @@ class UpdateBookmarkTest extends TestCase
      */
     public function testUpdateCorrect(?string $comment, ?int $category, string $result, array $sessionError)
     {
-        $user = User::query()->first();
+        // $this->withoutExceptionHandling();
 
+        $user = User::query()->first();
+        // $this->usecase->handle($category, $comment);
         /**
          * fromでどのURLからリクエストされたかを仮想的に設定できる
          */
