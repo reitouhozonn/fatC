@@ -6842,3 +6842,17 @@ Did you mean one of these?
 #46 /opt/laravel-bookmark/public/index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
 #47 {main}
 "} 
+[2021-09-22 20:58:56] testing.ERROR: urlからメタ情報の習得に失敗  
+[2021-09-22 21:13:35] local.ERROR: Command "laravel" is not defined. {"exception":"[object] (Symfony\\Component\\Console\\Exception\\CommandNotFoundException(code: 0): Command \"laravel\" is not defined. at /opt/laravel-bookmark/vendor/symfony/console/Application.php:676)
+[stacktrace]
+#0 /opt/laravel-bookmark/vendor/symfony/console/Application.php(237): Symfony\\Component\\Console\\Application->find('laravel')
+#1 /opt/laravel-bookmark/vendor/symfony/console/Application.php(149): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#2 /opt/laravel-bookmark/vendor/laravel/framework/src/Illuminate/Console/Application.php(93): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#3 /opt/laravel-bookmark/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(131): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#4 /opt/laravel-bookmark/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 {main}
+"} 
+[2021-09-22 23:21:39] testing.ERROR: urlからメタ情報の習得に失敗  
+[2021-09-22 23:26:03] testing.ERROR: urlからメタ情報の習得に失敗  
+[2021-09-22 23:49:16] testing.ERROR: urlからメタ情報の習得に失敗  
+[2021-09-22 23:49:48] testing.ERROR: urlからメタ情報の習得に失敗  

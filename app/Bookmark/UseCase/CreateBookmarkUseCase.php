@@ -35,7 +35,6 @@ final class CreateBookmarkUseCase
     public function handle(string $url, int $category, string $comment)
     {
         try {
-            // $preview = $previewClient->getPreview('general')->toArray();
             $preview = $this->linkPreview->get($url);
 
             $model = new Bookmark();
