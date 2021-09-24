@@ -20,7 +20,6 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\ValidationException;
 use Illuminate\View\View;
-use Tests\Feature\Bookmarks\DeleteBookmarkTest;
 
 class BookmarkController extends Controller
 {
