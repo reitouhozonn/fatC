@@ -13,6 +13,7 @@ use App\Http\Requests\UpdateBookmarkRequest;
 use App\Models\Bookmark;
 use App\Models\BookmarkCategory;
 use App\Models\User;
+use App\Repository\AuthenticatedUser;
 use Artesaos\SEOTools\Facades\SEOTools;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
@@ -20,9 +21,14 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\ValidationException;
 use Illuminate\View\View;
+use Illuminate\Http\Response;
 
 class BookmarkController extends Controller
 {
+
+    public function __construct(AuthenticatedUser $authenticatedUser)
+    {
+    }
     /**
      * ブックマーク一覧画面
      *
@@ -176,7 +182,6 @@ class BookmarkController extends Controller
      */
     public function update(UpdateBookmarkRequest $request, int $id, UpdateBookmarkUseCase $useCase)
     {
-
         $useCase->handle(
             $id,
             $request->comment,

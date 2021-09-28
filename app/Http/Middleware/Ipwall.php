@@ -19,6 +19,7 @@ final class Ipwall
      * @param  \Illuminate\Http\Request  $request
      * @param  \Closure  $next
      * @return mixed
+     * @throws AuthorizationException
      */
     public function handle(Request $request, Closure $next)
     {
