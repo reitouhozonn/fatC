@@ -2,10 +2,8 @@
 
 namespace App\Providers;
 
-use App\Lib\LinkPreview\LinkPreviewInterface;
 use App\Repository\AuthenticatedUser;
 use App\Repository\LaravelAuthenticatedUser;
-use Illuminate\Support\Facades\App;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
